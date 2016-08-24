@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: m63CfINeYBusxdgwNb8XcDrqLVaIcFNQsGo/4BBzses5+M/dzTLIudRIG8gufchMoDQzgsJXc6b2zt4/vbVFQesT00uTEojvRVQhUhE9dAi2FZcKsdW+gVgtPA18mUenbHxwZL20CKN9uHY9EBlrY6y5QwhLnw3CplqGIAPvyHzP0HdZIwq/X5OuaqLJFJSOyMXQUJYKLDanaTGeVLSpkSLuEfVjZILmiLTzYi/RUbGf6+oT+EDf9lTomF9Oa0Mg0MFU6p8LGiPt67HqBEp6KnUNkmZintyeCiELAT2/MNncc1KjoSskH0GrCk9lwsyXbBcpFdqH8w+vCc0E5qPzFeRrz9RF+hKiGgf8orYFG7qiPPdpEBYKhH14vNzJ2mp0MnEgi8+LAq3Axb0yqum/mnREa3ffIq0QIfQwdBHS6Ek2Ot6/zF2NMKc2EO7JSiANhXiC9gyqnun5Dc7sdO4aJO7xrGFz8BlMjx8Pk8tLJ+w0D5nCrZWlsQw23BluQ7rAKPbqe+FrEs51KxtiNNEo1yqA0zKAwTSBrPOqgseqLqN3TpkZebmikCMrYkw61yq+B0nJ2tj1gulBsDDLrz02NPQzF6rZFuLkjgbsR/znWAY8HLwh9ZUUYzGsNNpreodHwTflXflQkp1bkSVRy4/IubKlDguA/w2AmRCj+uXkPuI=
+  app: enigmatic-hollows-77027
+  on:
+    repo: jmacqueen/ember-peep-demo
