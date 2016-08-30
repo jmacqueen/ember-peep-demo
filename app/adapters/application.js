@@ -13,7 +13,7 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
       case 'users':
         return this._super.apply(this, arguments).replace('users', 'register')
       default:
-        return this._super.apply(...arguments)
+        return this._super(...arguments)
     }
   }
 });
