@@ -1,7 +1,8 @@
 // Fix for Roboto font path
 $roboto-font-path: '/assets/';
 
-// Materialize styles
+@import "components/color";
+$primary-color: color('deep-orange', 'darken-2');
 @import "materialize";
 
 body {
